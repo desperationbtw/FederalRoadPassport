@@ -47,10 +47,6 @@ let rendererConfig = {
         use: ['vue-style-loader', 'css-loader', 'less-loader']
       },
       {
-        test: /\.(scss|sass)$/i,
-        loaders: ["css", "sass"]
-    },
-      {
         test: /\.css$/,
         use: ['vue-style-loader', 'css-loader']
       },
@@ -162,20 +158,20 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 /**
- * Adjust rendererConfig for production settings
+ * Adjust webConfig for production settings
  */
 if (process.env.NODE_ENV === 'production') {
   rendererConfig.devtool = ''
 
   rendererConfig.plugins.push(
     new MinifyPlugin(),
-    new CopyWebpackPlugin([
-      {
-        from: path.join(__dirname, '../static'),
-        to: path.join(__dirname, '../dist/electron/static'),
-        ignore: ['.*']
-      }
-    ]),
+    new CopyWebpackPlugin({
+      //this is the new change
+      patterns: [
+        { from: path.join(__dirname, '../static'), to: path.join(__dirname, '../dist/electron/static') },
+      ],
+
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
