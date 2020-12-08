@@ -75,39 +75,7 @@ export default {
     }
   },
   mounted: function() {
-    function isOnline(no, yes) {
-      axios.post('http://91.210.168.129:3000/validation').catch(function(error) {
-        if (!error.response) {
-          no();
-        } else {
-          yes();
-        }
-      });
-    }
 
-    isOnline(
-      function() {
-        alert("Отсутствует интернет соединение!");
-        remote.getCurrentWindow().close();
-      },
-      function() {
-        //
-      }
-    );
-
-    const remote = require("electron").remote;
-    $.get("http://91.210.168.129:3000/validation", function(data) {
-      if (data == "true") console.log("validated");
-      else {
-        alert("Валидация не пройдена!");
-        remote.getCurrentWindow().close();
-      }
-    });
-    // axios.get("http://91.210.168.129:3000/validation").then(response => {
-    //   if (response) {
-    //     console.log(response);
-    //   }
-    // });
   }
 };
 </script>

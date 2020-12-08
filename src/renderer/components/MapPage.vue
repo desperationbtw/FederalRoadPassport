@@ -676,7 +676,7 @@ export default {
   },
   mounted: function() {
     this.map = L.map("map").setView([55.751244, 37.618423], 3);
-    L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
+    L.tileLayer("https://api.mapbox.com/styles/v1/luckshery/ckagnsb8n0cwp1ilt0kbwupze/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibHVja3NoZXJ5IiwiYSI6ImNrYWduaG5jbzAwbnYyeG9iZ2ZpczJuNDUifQ.B-x-S9Nd4HXPO-W4qAfvAg").addTo(
       this.map
     );
 
@@ -833,11 +833,11 @@ hr {
 }
 
 .icon-btn {
+      background-color: #212121;
   padding: 2px;
-  background-color: white;
   padding: 5px;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .icon-btn-active {
@@ -865,7 +865,7 @@ hr {
   cursor: pointer;
   color: #333333;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  background-color: #f5f5f5;
+  background-color: #222222;
   background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
   background-image: -webkit-gradient(
     linear,
@@ -874,9 +874,9 @@ hr {
     from(#ffffff),
     to(#e6e6e6)
   );
-  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-image: -webkit-linear-gradient(top, #292929, #161616);
+  background-image: -o-linear-gradient(top, #292929, #161616);
+  background-image: linear-gradient(to bottom, #292929, #161616);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
   border-color: #e6e6e6 #e6e6e6 #bfbfbf;
@@ -891,7 +891,7 @@ hr {
 
 .btn:hover,
 .btn:focus {
-  color: #333333;
+  color: #d8d8d8;
   text-decoration: none;
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
@@ -901,7 +901,8 @@ hr {
 }
 
 .r_controls {
-  background-color: white;
+  color: white;
+  background-color: #212121;
   width: 220px;
   padding: 5px;
 }
@@ -943,7 +944,7 @@ hr {
 
 .r_controls a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 div {
